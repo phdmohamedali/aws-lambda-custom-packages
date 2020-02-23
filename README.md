@@ -23,6 +23,10 @@ you have 3 examples (pandas, numpy, lxml)
 4- run the following command 
 docker build -t python-lambda .
 
-5- extract the packages  
+5- extract the packages to zipped-package
 run -it --rm --name py-lamb -v /Users/youruser/aws-lambda-custom-packages/src/site-package:/zipped-package python-lambday /bin/bash
+
+6- export generated libraries to src directory   
+cd /app/src/site-package/
+zip -ur /zipped-package/package.zip *
 
