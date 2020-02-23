@@ -26,7 +26,9 @@ docker build -t python-lambda .
 5- extract the packages to zipped-package
 run -it --rm --name py-lamb -v /Users/youruser/aws-lambda-custom-packages/src/site-package:/zipped-package python-lambday /bin/bash
 
-6- export generated libraries to src directory   
+6- export generated libraries to "site-package" sub-directory with python.zip name in src directory    
 cd /app/src/site-package/
-zip -ur /zipped-package/package.zip *
+zip -ur /zipped-package/python.zip *
+
+7- you can simply now upload python.zip as a layer and start using the libraries. 
 
